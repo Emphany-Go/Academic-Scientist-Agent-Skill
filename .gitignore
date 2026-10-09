@@ -1,0 +1,20 @@
+# Generated research data, not source
+.academic-scientist/
+evaluation/
+benchmarks/
+work/
+runs/
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+.render-temp-*/
+chrome-profile/
+browser-temp/
+.env
+.env.*
+!.env.example
+*.zip
+*.zip.sha256
+.DS_Store
+Thumbs.db

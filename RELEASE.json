@@ -1,0 +1,13 @@
+{
+  "name": "Academic-Scientist Agent Skill V0.1",
+  "version": "0.1.0",
+  "display_version": "V0.1",
+  "skill_name": "academic-scientist",
+  "license": "MIT",
+  "installed_skill": "skills/academic-scientist",
+  "python_dependencies": "skills/academic-scientist/requirements.txt",
+  "includes_runtime_dependencies": false,
+  "includes_research_data": false,
+  "includes_development_tests": false,
+  "native_drawio_render_verified": false
+}
