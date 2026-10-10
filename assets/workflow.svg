@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1140" viewBox="0 0 1800 1140" role="img" aria-labelledby="title desc">
+<title id="title">Academic-Scientist workflow</title><desc id="desc">Three-round brainstorming and uploaded papers inform evidence-linked guidance, one confirmed research route and three editable diagrams.</desc>
+<rect width="1800" height="1140" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#35485E"/></marker></defs>
+<path d="M 315.0,380.0 L 315.0,440.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 315.0,595.0 L 315.0,680.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 895.0,380.0 L 895.0,440.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 895.0,595.0 L 895.0,680.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 1475.0,405.0 L 1475.0,480.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 1475.0,580.0 L 1475.0,655.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 1475.0,770.0 L 1475.0,840.0" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 535.0,730.0 L 605.0,730.0 L 605.0,255.0 L 1475.0,255.0 L 1475.0,290.0" fill="none" stroke="#7A8493" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="9 6"/>
+<path d="M 1115.0,730.0 L 1170.0,730.0 L 1170.0,341.75 L 1255.0,341.75" fill="none" stroke="#35485E" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 1115.0,887.5 L 1200.0,887.5 L 1200.0,382.0 L 1255.0,382.0" fill="none" stroke="#7A8493" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="9 6"/>
+<text x="60.0" y="67.5" font-family="Arial, sans-serif" font-size="48.0" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#203046">Academic-Scientist</text>
+<text x="60.0" y="132.0" font-family="Arial, sans-serif" font-size="29.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">From research curiosity to an evidence-linked plan.</text>
+<text x="95.0" y="212.5" font-family="Arial, sans-serif" font-size="27.0" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#203046">01  DEFINE THE QUESTION</text>
+<text x="675.0" y="212.5" font-family="Arial, sans-serif" font-size="27.0" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#203046">02  BUILD THE EVIDENCE</text>
+<text x="1255.0" y="212.5" font-family="Arial, sans-serif" font-size="27.0" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#203046">03  DESIGN THE STUDY</text>
+<rect x="95.0" y="290.0" width="440.0" height="90.0" rx="12" fill="#EDF3FA" stroke="#7796B8" stroke-width="2"/>
+<text x="315.0" y="318.2" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Research curiosity</text>
+<text x="315.0" y="351.79999999999995" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">A broad topic is enough</text>
+<rect x="95.0" y="440.0" width="440.0" height="155.0" rx="12" fill="#EDF3FA" stroke="#7796B8" stroke-width="2"/>
+<text x="315.0" y="467.1" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Three-round brainstorming</text>
+<text x="315.0" y="500.70000000000005" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Interest &amp; motivation</text>
+<text x="315.0" y="534.3" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Options &amp; constraints</text>
+<text x="315.0" y="567.9" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Reading focus</text>
+<rect x="95.0" y="680.0" width="440.0" height="100.0" rx="12" fill="#EDF3FA" stroke="#7796B8" stroke-width="2"/>
+<text x="315.0" y="713.2" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Research profile</text>
+<text x="315.0" y="746.8000000000001" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Goals, constraints &amp; unknowns</text>
+<rect x="675.0" y="290.0" width="440.0" height="90.0" rx="12" fill="#EDF3FA" stroke="#7796B8" stroke-width="2"/>
+<text x="895.0" y="318.2" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Uploaded papers</text>
+<text x="895.0" y="351.79999999999995" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Text, tables &amp; figures</text>
+<rect x="675.0" y="440.0" width="440.0" height="155.0" rx="12" fill="#E7F3F0" stroke="#5A9488" stroke-width="2"/>
+<text x="895.0" y="467.1" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Extract &amp; verify</text>
+<text x="895.0" y="500.70000000000005" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Methods, models &amp; conditions</text>
+<text x="895.0" y="534.3" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Metrics, results &amp; limitations</text>
+<text x="895.0" y="567.9" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Retain explicit unknowns</text>
+<rect x="675.0" y="680.0" width="440.0" height="100.0" rx="12" fill="#E7F3F0" stroke="#5A9488" stroke-width="2"/>
+<text x="895.0" y="713.2" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Evidence-linked records</text>
+<text x="895.0" y="746.8000000000001" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Page, table &amp; figure references</text>
+<rect x="675.0" y="840.0" width="440.0" height="95.0" rx="12" fill="#FBF3E1" stroke="#B79953" stroke-width="2"/>
+<text x="895.0" y="870.7" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Official venue context</text>
+<text x="895.0" y="904.3000000000001" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Scope &amp; latest verified ratings</text>
+<rect x="1255.0" y="290.0" width="440.0" height="115.0" rx="12" fill="#F0EDF8" stroke="#9483B5" stroke-width="2"/>
+<text x="1475.0" y="313.9" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Learning-oriented guidance</text>
+<text x="1475.0" y="347.5" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Methods, background &amp; design</text>
+<text x="1475.0" y="381.09999999999997" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Model choice; no scoring</text>
+<rect x="1255.0" y="480.0" width="440.0" height="100.0" rx="12" fill="#F0EDF8" stroke="#9483B5" stroke-width="2"/>
+<text x="1475.0" y="513.2" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Confirm one research route</text>
+<text x="1475.0" y="546.8000000000001" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Ask about unresolved choices</text>
+<rect x="1255.0" y="655.0" width="440.0" height="115.0" rx="12" fill="#F0EDF8" stroke="#9483B5" stroke-width="2"/>
+<text x="1475.0" y="678.9" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">A testable research framework</text>
+<text x="1475.0" y="712.5" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Hypotheses, controls &amp; evaluation</text>
+<text x="1475.0" y="746.0999999999999" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">A proposal, not executed results</text>
+<rect x="1255.0" y="840.0" width="440.0" height="110.0" rx="12" fill="#EAF4E6" stroke="#7A9E68" stroke-width="2"/>
+<text x="1475.0" y="878.2" font-family="Arial, sans-serif" font-size="24.0" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#203046">Three editable views</text>
+<text x="1475.0" y="911.8000000000001" font-family="Arial, sans-serif" font-size="24.0" font-weight="400" text-anchor="middle" dominant-baseline="central" fill="#203046">Overview / Module / Experiment</text>
+<text x="95.0" y="831.5" font-family="Arial, sans-serif" font-size="20.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">Solid arrows: process / evidence</text>
+<text x="95.0" y="859.5" font-family="Arial, sans-serif" font-size="20.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">Dashed arrows: goal / context</text>
+<text x="95.0" y="887.5" font-family="Arial, sans-serif" font-size="20.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">Blue: inputs; teal: paper evidence</text>
+<text x="95.0" y="915.5" font-family="Arial, sans-serif" font-size="20.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">Gold: official; purple: Agent analysis</text>
+<text x="95.0" y="943.5" font-family="Arial, sans-serif" font-size="20.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">Green: editable outputs</text>
+<text x="60.0" y="1020.0" font-family="Arial, sans-serif" font-size="25.0" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#203046">Keep paper facts, official context, Agent proposals and personal notes separate.</text>
+<text x="60.0" y="1070.0" font-family="Arial, sans-serif" font-size="23.0" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#203046">Editable library: Excel + Markdown   |   Traceable records: JSON   |   Figures: draw.io + SVG + PNG</text>
+</svg>

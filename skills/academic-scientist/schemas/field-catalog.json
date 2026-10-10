@@ -1,0 +1,155 @@
+{
+  "title": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "authors": {
+    "scope": "paper",
+    "type": "array"
+  },
+  "publication_year": {
+    "scope": "paper",
+    "type": "integer"
+  },
+  "venue": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "research_objective": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "prior_limitations": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "hypothesis": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "application_scope": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "method_overview": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "model_inventory": {
+    "scope": "paper",
+    "type": "array"
+  },
+  "author_conclusion": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "evidence_scope": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "failure_cases": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "author_limitations": {
+    "scope": "paper",
+    "type": "string"
+  },
+  "code_availability": {
+    "scope": "paper",
+    "type": "string",
+    "enum": [
+      "provided",
+      "not_provided"
+    ]
+  },
+  "data_availability": {
+    "scope": "paper",
+    "type": "string",
+    "enum": [
+      "provided",
+      "not_provided"
+    ]
+  },
+  "model_name": {
+    "scope": "model",
+    "type": "string"
+  },
+  "model_function": {
+    "scope": "model",
+    "type": "string"
+  },
+  "model_io": {
+    "scope": "model",
+    "type": "string"
+  },
+  "training": {
+    "scope": "model",
+    "type": "string"
+  },
+  "model_origin": {
+    "scope": "model",
+    "type": "array",
+    "enum_items": [
+      "proposed",
+      "structural_modification",
+      "combination",
+      "finetuning_or_training_change",
+      "direct_use",
+      "baseline",
+      "undetermined"
+    ]
+  },
+  "source_attribution": {
+    "scope": "model",
+    "type": "string"
+  },
+  "model_scale": {
+    "scope": "model",
+    "type": "string"
+  },
+  "dataset": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "sample_size": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "split": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "preprocessing": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "baselines": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "ablation": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "hyperparameters": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "compute_resources": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "metric": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "result": {
+    "scope": "experiment",
+    "type": "string"
+  },
+  "conditions": {
+    "scope": "experiment",
+    "type": "string"
+  }
+}

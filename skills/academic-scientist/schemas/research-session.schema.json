@@ -1,0 +1,414 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "state": {
+      "enum": [
+        "initial",
+        "round1_wait",
+        "round1_answered",
+        "round2_wait",
+        "round2_answered",
+        "round3_wait",
+        "ready"
+      ]
+    },
+    "purpose": {
+      "enum": [
+        "live",
+        "synthetic_test"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "updated_at": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "initial": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "user_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "text",
+        "user_ref"
+      ]
+    },
+    "rounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "number": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "context": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1,
+            "maxItems": 2
+          },
+          "based_on": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "asked_at": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "answer": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "user_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "text",
+                  "user_ref"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "number",
+          "context",
+          "questions",
+          "based_on",
+          "asked_at",
+          "answer"
+        ]
+      },
+      "maxItems": 3
+    },
+    "amendments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "user_ref": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "user_ref"
+        ]
+      }
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "schema_version": {
+            "const": "0.2.0"
+          },
+          "session_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "purpose": {
+            "enum": [
+              "live",
+              "synthetic_test"
+            ]
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "basis_revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "initial_idea": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "dialogue": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "number": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3
+                },
+                "context": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "questions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "minItems": 1,
+                  "maxItems": 2
+                },
+                "based_on": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "asked_at": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "answer": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "user_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "user_ref"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "number",
+                "context",
+                "questions",
+                "based_on",
+                "asked_at",
+                "answer"
+              ]
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "amendments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "user_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "user_ref"
+              ]
+            }
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "category": {
+                  "enum": [
+                    "interest",
+                    "candidate_direction",
+                    "reading_goal",
+                    "constraint",
+                    "research_stage",
+                    "unknown",
+                    "suggestion"
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "origin": {
+                  "enum": [
+                    "user_explicit",
+                    "agent_proposal",
+                    "unresolved"
+                  ]
+                },
+                "source_quotes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "source_ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      }
+                    },
+                    "required": [
+                      "source_ref",
+                      "quote"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "category",
+                "text",
+                "origin",
+                "source_quotes"
+              ]
+            },
+            "minItems": 1
+          },
+          "created_at": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "revision_reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schema_version",
+          "session_id",
+          "purpose",
+          "version",
+          "basis_revision",
+          "initial_idea",
+          "dialogue",
+          "amendments",
+          "entries",
+          "created_at",
+          "revision_reason"
+        ]
+      }
+    },
+    "card_stale": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_id",
+    "revision",
+    "state",
+    "purpose",
+    "created_at",
+    "updated_at",
+    "initial",
+    "rounds",
+    "amendments",
+    "cards",
+    "card_stale"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Academic Scientist research-session v0.2.0"
+}

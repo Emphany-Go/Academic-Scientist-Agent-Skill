@@ -1,0 +1,409 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.4.0"
+    },
+    "source_kind": {
+      "const": "external_venue_profile"
+    },
+    "venue_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,79}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "kind": {
+      "enum": [
+        "journal",
+        "conference",
+        "workshop",
+        "unknown"
+      ]
+    },
+    "homepage": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "verified",
+            "unverified"
+          ]
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "review_note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "status",
+        "text",
+        "source_ids",
+        "review_note"
+      ]
+    },
+    "positioning": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "verified",
+            "unverified"
+          ]
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "review_note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "status",
+        "text",
+        "source_ids",
+        "review_note"
+      ]
+    },
+    "ratings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "system": {
+            "enum": [
+              "JCR",
+              "CAS",
+              "CCF"
+            ]
+          },
+          "edition": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "release_year": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1000,
+            "maximum": 9999
+          },
+          "metric_year": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1000,
+            "maximum": 9999
+          },
+          "period_note": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "category_level": {
+            "enum": [
+              "jcr_category",
+              "major",
+              "minor",
+              "ccf_area",
+              "unknown"
+            ]
+          },
+          "status": {
+            "enum": [
+              "verified",
+              "unverified",
+              "third_party",
+              "conflicting",
+              "not_applicable"
+            ]
+          },
+          "value": {
+            "enum": [
+              null,
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "1区",
+              "2区",
+              "3区",
+              "4区",
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "checked_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "review_note": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "coverage": {
+            "enum": [
+              "all_categories_checked",
+              "selected_categories",
+              "unknown"
+            ]
+          },
+          "applies_to": {
+            "enum": [
+              "journal",
+              "full_regular_papers",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "system",
+          "edition",
+          "release_year",
+          "metric_year",
+          "period_note",
+          "category",
+          "category_level",
+          "status",
+          "value",
+          "source_ids",
+          "checked_on",
+          "review_note",
+          "coverage",
+          "applies_to"
+        ]
+      },
+      "minItems": 0
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "authority": {
+            "enum": [
+              "venue_official",
+              "rating_official",
+              "third_party"
+            ]
+          },
+          "system": {
+            "enum": [
+              null,
+              "JCR",
+              "CAS",
+              "CCF"
+            ]
+          },
+          "access": {
+            "enum": [
+              "read",
+              "search_only",
+              "blocked",
+              "user_supplied"
+            ]
+          },
+          "retrieved_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "excerpt": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "artifact_path": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "artifact_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "title",
+          "authority",
+          "system",
+          "access",
+          "retrieved_on",
+          "locator",
+          "excerpt",
+          "note",
+          "artifact_path",
+          "artifact_sha256"
+        ]
+      },
+      "minItems": 1
+    },
+    "checked_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "review_note": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_kind",
+    "venue_id",
+    "name",
+    "aliases",
+    "kind",
+    "homepage",
+    "identity",
+    "positioning",
+    "ratings",
+    "sources",
+    "checked_on",
+    "review_note"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "External venue profile v0.4.0; never part of paper facts"
+}

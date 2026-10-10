@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "release", "revision", "files", "index_sha256"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"}, "release": {"const": "V0.1"},
+    "revision": {"type": "integer", "minimum": 0}, "index_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "files": {"type": "object", "additionalProperties": {
+      "type": "object", "additionalProperties": false, "required": ["source", "target", "kind", "sha256"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1}, "target": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["workbook", "recommendations", "proposal", "research_profile", "figure", "card"]},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "export_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"}, "collection": {"type": "string", "minLength": 1}
+      },
+      "allOf": [{"if": {"properties": {"kind": {"const": "workbook"}}}, "then": {"required": ["export_id", "collection"]}}]
+    }}
+  }
+}

@@ -1,0 +1,2163 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.7.0"
+    },
+    "source_kind": {
+      "const": "agent_proposal"
+    },
+    "route_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "execution_status": {
+      "const": "not_run"
+    },
+    "novelty_status": {
+      "const": "not_assessed"
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "problem": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "hypothesis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "approach": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "data_plan": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "baselines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "evaluation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "ablations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "minimal_experiment": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "failure_criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "goal_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source": {
+                      "enum": [
+                        "card",
+                        "answer"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "ref"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fact_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "paper_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "assertion_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "paper_id",
+                    "assertion_id",
+                    "evidence_ids"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "text",
+              "goal_refs",
+              "fact_refs",
+              "verification"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "problem",
+        "hypothesis",
+        "approach",
+        "data_plan",
+        "baselines",
+        "evaluation",
+        "ablations",
+        "minimal_experiment",
+        "failure_criteria",
+        "limitations"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,47}$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "risk": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "verify": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "risk",
+          "verify"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "phase": {
+                "enum": [
+                  "input",
+                  "training",
+                  "inference",
+                  "evaluation",
+                  "output",
+                  "shared"
+                ]
+              },
+              "statement_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "kind",
+              "phase",
+              "statement_refs"
+            ]
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "source": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "relation": {
+                "enum": [
+                  "data",
+                  "control",
+                  "feedback",
+                  "update"
+                ]
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "statement_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "source",
+              "target",
+              "relation",
+              "label",
+              "statement_refs"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "title",
+        "nodes",
+        "edges"
+      ]
+    },
+    "figure_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "0.7.1"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "kind": {
+                "enum": [
+                  "borrowed",
+                  "proposal",
+                  "unknown"
+                ]
+              },
+              "phase": {
+                "enum": [
+                  "input",
+                  "training",
+                  "inference",
+                  "evaluation",
+                  "output",
+                  "shared"
+                ]
+              },
+              "statement_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "parent_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "shape": {
+                "enum": [
+                  "process",
+                  "decision",
+                  "data",
+                  "artifact"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "kind",
+              "phase",
+              "statement_refs",
+              "parent_id",
+              "shape"
+            ]
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "source": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,47}$"
+              },
+              "relation": {
+                "enum": [
+                  "data",
+                  "control",
+                  "feedback",
+                  "update",
+                  "reference"
+                ]
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "statement_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "source",
+              "target",
+              "relation",
+              "label",
+              "statement_refs"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "views": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "overview": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "purpose": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "focus_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "node_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  "minItems": 2,
+                  "uniqueItems": true
+                },
+                "edge_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "canvas": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "width": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    }
+                  },
+                  "required": [
+                    "width",
+                    "height"
+                  ]
+                },
+                "positions": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "x": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "width": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "height": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      }
+                    },
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height"
+                    ]
+                  }
+                },
+                "routes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "source_port": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "top",
+                          "bottom"
+                        ]
+                      },
+                      "target_port": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "top",
+                          "bottom"
+                        ]
+                      },
+                      "waypoints": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "x": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "y": {
+                              "type": "number",
+                              "minimum": 0
+                            }
+                          },
+                          "required": [
+                            "x",
+                            "y"
+                          ]
+                        },
+                        "minItems": 0,
+                        "uniqueItems": true
+                      },
+                      "label_box": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "x": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "y": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "width": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                              },
+                              "height": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                              }
+                            },
+                            "required": [
+                              "x",
+                              "y",
+                              "width",
+                              "height"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "source_port",
+                      "target_port",
+                      "waypoints",
+                      "label_box"
+                    ]
+                  }
+                },
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "node_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                      },
+                      "bounds": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "width": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                          },
+                          "height": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label",
+                      "node_ids",
+                      "bounds"
+                    ]
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "title",
+                "purpose",
+                "focus_id",
+                "node_ids",
+                "edge_ids",
+                "canvas",
+                "positions",
+                "routes",
+                "groups"
+              ]
+            },
+            "module_detail": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "purpose": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "focus_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "node_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  "minItems": 2,
+                  "uniqueItems": true
+                },
+                "edge_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "canvas": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "width": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    }
+                  },
+                  "required": [
+                    "width",
+                    "height"
+                  ]
+                },
+                "positions": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "x": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "width": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "height": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      }
+                    },
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height"
+                    ]
+                  }
+                },
+                "routes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "source_port": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "top",
+                          "bottom"
+                        ]
+                      },
+                      "target_port": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "top",
+                          "bottom"
+                        ]
+                      },
+                      "waypoints": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "x": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "y": {
+                              "type": "number",
+                              "minimum": 0
+                            }
+                          },
+                          "required": [
+                            "x",
+                            "y"
+                          ]
+                        },
+                        "minItems": 0,
+                        "uniqueItems": true
+                      },
+                      "label_box": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "x": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "y": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "width": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                              },
+                              "height": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                              }
+                            },
+                            "required": [
+                              "x",
+                              "y",
+                              "width",
+                              "height"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "source_port",
+                      "target_port",
+                      "waypoints",
+                      "label_box"
+                    ]
+                  }
+                },
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "node_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                      },
+                      "bounds": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "width": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                          },
+                          "height": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label",
+                      "node_ids",
+                      "bounds"
+                    ]
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "title",
+                "purpose",
+                "focus_id",
+                "node_ids",
+                "edge_ids",
+                "canvas",
+                "positions",
+                "routes",
+                "groups"
+              ]
+            },
+            "experiment": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "purpose": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "focus_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "node_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  "minItems": 2,
+                  "uniqueItems": true
+                },
+                "edge_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "canvas": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "width": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    }
+                  },
+                  "required": [
+                    "width",
+                    "height"
+                  ]
+                },
+                "positions": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "x": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "width": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "height": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      }
+                    },
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height"
+                    ]
+                  }
+                },
+                "routes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "source_port": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "top",
+                          "bottom"
+                        ]
+                      },
+                      "target_port": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "top",
+                          "bottom"
+                        ]
+                      },
+                      "waypoints": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "x": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "y": {
+                              "type": "number",
+                              "minimum": 0
+                            }
+                          },
+                          "required": [
+                            "x",
+                            "y"
+                          ]
+                        },
+                        "minItems": 0,
+                        "uniqueItems": true
+                      },
+                      "label_box": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "x": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "y": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "width": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                              },
+                              "height": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                              }
+                            },
+                            "required": [
+                              "x",
+                              "y",
+                              "width",
+                              "height"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "source_port",
+                      "target_port",
+                      "waypoints",
+                      "label_box"
+                    ]
+                  }
+                },
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "node_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                      },
+                      "bounds": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "width": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                          },
+                          "height": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label",
+                      "node_ids",
+                      "bounds"
+                    ]
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "title",
+                "purpose",
+                "focus_id",
+                "node_ids",
+                "edge_ids",
+                "canvas",
+                "positions",
+                "routes",
+                "groups"
+              ]
+            }
+          },
+          "required": [
+            "overview",
+            "module_detail",
+            "experiment"
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "nodes",
+        "edges",
+        "views"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Coherent three-view figure set v0.7.1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_kind",
+    "route_id",
+    "title",
+    "execution_status",
+    "novelty_status",
+    "sections",
+    "assumptions",
+    "graph"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "research-proposal v0.7.0"
+}

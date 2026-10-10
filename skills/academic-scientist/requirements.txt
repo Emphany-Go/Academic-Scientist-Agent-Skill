@@ -1,0 +1,5 @@
+# Tested versions for V0.1; Python 3.10+. Install only with user approval.
+jsonschema==4.19.2
+pypdf==6.18.1
+pypdfium2==5.13.0
+Pillow==12.3.0
