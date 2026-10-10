@@ -1,0 +1,327 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.7.1"
+    },
+    "proposal_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "views": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cycles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "screenshot": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "render_record": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_drawio": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_svg": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "screenshot",
+                  "render_record",
+                  "source_drawio",
+                  "source_svg",
+                  "note"
+                ]
+              },
+              "minItems": 3,
+              "uniqueItems": true,
+              "maxItems": 3
+            },
+            "checks": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "semantics": {
+                  "const": true
+                },
+                "readability": {
+                  "const": true
+                },
+                "connectors": {
+                  "const": true
+                },
+                "paper_scale": {
+                  "const": true
+                }
+              },
+              "required": [
+                "semantics",
+                "readability",
+                "connectors",
+                "paper_scale"
+              ]
+            },
+            "png": {
+              "type": "string",
+              "minLength": 1
+            },
+            "paper_scale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "pdf": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cycles",
+            "checks",
+            "png",
+            "paper_scale",
+            "pdf"
+          ]
+        },
+        "module_detail": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cycles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "screenshot": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "render_record": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_drawio": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_svg": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "screenshot",
+                  "render_record",
+                  "source_drawio",
+                  "source_svg",
+                  "note"
+                ]
+              },
+              "minItems": 3,
+              "uniqueItems": true,
+              "maxItems": 3
+            },
+            "checks": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "semantics": {
+                  "const": true
+                },
+                "readability": {
+                  "const": true
+                },
+                "connectors": {
+                  "const": true
+                },
+                "paper_scale": {
+                  "const": true
+                }
+              },
+              "required": [
+                "semantics",
+                "readability",
+                "connectors",
+                "paper_scale"
+              ]
+            },
+            "png": {
+              "type": "string",
+              "minLength": 1
+            },
+            "paper_scale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "pdf": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cycles",
+            "checks",
+            "png",
+            "paper_scale",
+            "pdf"
+          ]
+        },
+        "experiment": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cycles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "screenshot": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "render_record": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_drawio": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_svg": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "screenshot",
+                  "render_record",
+                  "source_drawio",
+                  "source_svg",
+                  "note"
+                ]
+              },
+              "minItems": 3,
+              "uniqueItems": true,
+              "maxItems": 3
+            },
+            "checks": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "semantics": {
+                  "const": true
+                },
+                "readability": {
+                  "const": true
+                },
+                "connectors": {
+                  "const": true
+                },
+                "paper_scale": {
+                  "const": true
+                }
+              },
+              "required": [
+                "semantics",
+                "readability",
+                "connectors",
+                "paper_scale"
+              ]
+            },
+            "png": {
+              "type": "string",
+              "minLength": 1
+            },
+            "paper_scale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "pdf": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cycles",
+            "checks",
+            "png",
+            "paper_scale",
+            "pdf"
+          ]
+        }
+      },
+      "required": [
+        "overview",
+        "module_detail",
+        "experiment"
+      ]
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "minProperties": 1
+    },
+    "combined_pdf": {
+      "type": "string",
+      "minLength": 1
+    },
+    "native_drawio_render_verified": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "proposal_digest",
+    "manifest_sha256",
+    "reviewer",
+    "at",
+    "views",
+    "files",
+    "combined_pdf",
+    "native_drawio_render_verified"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

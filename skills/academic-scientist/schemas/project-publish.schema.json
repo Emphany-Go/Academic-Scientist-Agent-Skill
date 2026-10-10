@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false, "required": ["artifacts"],
+  "properties": {"artifacts": {"type": "array", "minItems": 1, "items": {
+    "type": "object", "additionalProperties": false, "required": ["source", "target", "kind"],
+    "properties": {
+      "source": {"type": "string", "minLength": 1}, "target": {"type": "string", "minLength": 1},
+      "kind": {"enum": ["workbook", "recommendations", "proposal", "research_profile", "figure", "card"]},
+      "export_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+      "collection": {"type": "string", "minLength": 1}
+    },
+    "allOf": [{"if": {"properties": {"kind": {"const": "workbook"}}}, "then": {"required": ["export_id", "collection"]}}]
+  }}}
+}

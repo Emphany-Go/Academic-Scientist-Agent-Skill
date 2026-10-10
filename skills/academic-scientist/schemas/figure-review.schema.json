@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "proposal_digest": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "at": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "cycles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "screenshot": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "source_drawio": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "screenshot",
+          "source_drawio",
+          "notes"
+        ]
+      },
+      "minItems": 3,
+      "uniqueItems": true
+    },
+    "renderer": {
+      "const": "local_limited_xml_renderer"
+    },
+    "native_drawio_render_verified": {
+      "const": false
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "text_readable": {
+          "const": true
+        },
+        "arrows_clear": {
+          "const": true
+        },
+        "semantics_match": {
+          "const": true
+        },
+        "paper_scale_checked": {
+          "const": true
+        }
+      },
+      "required": [
+        "text_readable",
+        "arrows_clear",
+        "semantics_match",
+        "paper_scale_checked"
+      ]
+    },
+    "file_hashes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    }
+  },
+  "required": [
+    "proposal_digest",
+    "reviewer",
+    "notes",
+    "at",
+    "cycles",
+    "renderer",
+    "native_drawio_render_verified",
+    "checks",
+    "file_hashes"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "figure-review v0.7.0"
+}

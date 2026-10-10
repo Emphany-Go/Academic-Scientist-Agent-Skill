@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "doc_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "profile": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "page_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "registered",
+        "processing",
+        "parsed_text",
+        "review_required",
+        "partial",
+        "failed",
+        "password_required"
+      ]
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "status": {
+            "enum": [
+              "text_extracted",
+              "needs_visual_review",
+              "text_suspect",
+              "failed"
+            ]
+          },
+          "text_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "text_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "preview_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "preview_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "char_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "semantic_review": {
+            "const": "not_started"
+          }
+        },
+        "required": [
+          "number",
+          "status",
+          "text_path",
+          "text_sha256",
+          "preview_path",
+          "preview_sha256",
+          "char_count",
+          "issues",
+          "error",
+          "semantic_review"
+        ]
+      }
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "tables": {
+      "const": "not_structured"
+    },
+    "figures": {
+      "const": "page_preview_only"
+    }
+  },
+  "required": [
+    "schema_version",
+    "doc_id",
+    "profile",
+    "page_count",
+    "status",
+    "pages",
+    "error",
+    "updated_at",
+    "tables",
+    "figures"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Academic Scientist document-parse v0.2.0"
+}

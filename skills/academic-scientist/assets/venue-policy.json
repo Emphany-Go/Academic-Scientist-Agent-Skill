@@ -1,0 +1,8 @@
+{
+  "time_basis": "latest_verified",
+  "source_policy": "official_only",
+  "search_third_party": false,
+  "missing_rating_text": "尚未查阅到相关官方评级",
+  "confirmed_on": "2026-10-03",
+  "decision_source": "用户明确要求：评价年份展示最新可核实版本；官方评级无法查询时明确标注，不展示或检索第三方信息。"
+}
