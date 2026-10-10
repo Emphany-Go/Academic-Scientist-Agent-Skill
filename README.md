@@ -184,7 +184,6 @@ The source package excludes research PDFs, personal answers, study workspaces, b
 ## Documentation and acknowledgments
 
 - [Installation and environment setup](docs/INSTALL.md)
-- [GitHub publishing guide](docs/GITHUB.md)
 - [V0.1 release notes](docs/RELEASE_NOTES.md)
 - [Validation scope](VALIDATION.md)
 - [Reference and dependency notices](NOTICE.md)
