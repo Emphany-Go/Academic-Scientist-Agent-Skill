@@ -184,7 +184,6 @@ Academic-Scientist-Agent-Skill/
 ## 文档与致谢
 
 - [安装与环境检查](docs/INSTALL.md)
-- [GitHub 发布教程](docs/GITHUB.md)
 - [V0.1 版本说明](docs/RELEASE_NOTES.md)
 - [验证范围](VALIDATION.md)
 - [参考项目与依赖说明](NOTICE.md)
